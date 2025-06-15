@@ -8,7 +8,7 @@ An IoT-based smart agriculture solution using **STM32F446RE** and **RuggedBoard 
 | File/Folder           | Description                                           |
 |-----------------------|-------------------------------------------------------|
 | `Ruggedboard.py`      | Python script for RuggedBoard A5D2x to handle UART input and MQTT communication with ThingsBoard |
-| `complete_project.zip`| STM32CubeIDE complete project (STM32F446RE firmware to read sensors and send JSON over UART) |
+| `STM32.zip`| STM32CubeIDE complete project (STM32F446RE firmware to read sensors and send JSON over UART) |
 | `README.md`           | Project documentation                             |
 
 ---
