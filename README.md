@@ -3,6 +3,15 @@
 An IoT-based smart agriculture solution using **STM32F446RE** and **RuggedBoard A5D2x** to monitor environmental conditions and control irrigation automatically via **ThingsBoard**.
 
 ---
+## 📁 Project Files
+
+| File/Folder           | Description                                           |
+|-----------------------|-------------------------------------------------------|
+| `Ruggedboard.py`      | Python script for RuggedBoard A5D2x to handle UART input and MQTT communication with ThingsBoard |
+| `complete_project.zip`| STM32CubeIDE complete project (STM32F446RE firmware to read sensors and send JSON over UART) |
+| `README.md`           | Project documentation                             |
+
+---
 
 ## 🚀 Overview
 
@@ -44,6 +53,35 @@ This project helps automate agricultural monitoring and irrigation using:
 | Relay Module          | Controls irrigation pump/valve       |
 | Ethernet Cable        | Network connectivity for MQTT        |
 
+---
+## ✅ Getting Started
+
+### 1. Flash STM32
+
+- Extract `complete_project.zip`.
+- Open the project in **STM32CubeIDE**.
+- Build and flash the firmware to your **STM32F446RE** board.
+
+### 2. Configure RuggedBoard
+
+- Connect the sensors to STM32.
+- Connect **STM32 UART TX** to **RuggedBoard RX**.
+- Ensure **Python 3** is installed on the RuggedBoard.
+- Edit MQTT credentials inside `Ruggedboard.py`:
+
+```python
+ACCESS_TOKEN = "your-thingsboard-device-token"
+BROKER = "demo.thingsboard.io"  # or use your local IP
+```
+Run the script on the RuggedBoard:
+```python
+python3 Ruggedboard.py
+```
+### 3. Use Dashboard
+
+- Import the ThingsBoard dashboard (if available as a .json export).
+- Open the dashboard to monitor real-time values.
+- Use the switch widget to manually or automatically control the relay.
 ---
 
 ## 📦 Data Format (JSON)
